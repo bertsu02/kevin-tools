@@ -33,7 +33,7 @@
         { name: '10$ Tip', startDeg: 198, endDeg: 270 },
         { name: '💎MAJOR WIN!!💎', startDeg: 270.01, endDeg: 287.99},
         { name: '10$ Tip', startDeg: 288, endDeg: 360 },
-       
+       ];
   
       for (const area of areas) {
         if (deg >= area.startDeg && deg < area.endDeg) {
