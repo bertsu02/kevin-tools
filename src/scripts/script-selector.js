@@ -22,11 +22,11 @@ import rainBackground from "../img/rainbg.png";
     const wheelConfigurations = {
         wheel2: [
             { name: '25 Coins Tip', startDeg: 0, endDeg: 9 },
-            { name: '5 Coins Tip', startDeg: 9, endDeg: 72 },
+            { name: '10 Coins Tip', startDeg: 9, endDeg: 72 },
             { name: '10 Coins Tip', startDeg: 72, endDeg: 135 },
             { name: 'Battle Call', startDeg: 135, endDeg: 180 },
             { name: '25 Coins Tip', startDeg: 180, endDeg: 189 },
-            { name: '5 Coins Tip', startDeg: 189, endDeg: 252 },
+            { name: '10 Coins Tip', startDeg: 189, endDeg: 252 },
             { name: '10 Coins Tip', startDeg: 252, endDeg: 315 },
             { name: 'Battle Call', startDeg: 315, endDeg: 360 },
         ],
