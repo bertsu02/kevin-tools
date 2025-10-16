@@ -1,5 +1,5 @@
-import bigWheelImg from "../img/big-wheel.png";
-// import rainWheelImg from "../img/rain-wheel.png";  <-- moved down for clarity
+//import bigWheelImg from "../img/big-wheel.png";
+
 import rainWheelImg from "../img/rain-wheel.png";
 
 // import bigMarker from "../img/BIG-MARKER.png";
@@ -48,7 +48,8 @@ import rainBackground from "../img/rainbg.png";
 
     // Default to rain wheel
     let currentWheel = 'wheel3';
-
+    setBackground('wheel3');
+    
     function setWheel(wheelId, wheelImage) {
         currentWheel = wheelId;
         wheel.src = wheelImage;
