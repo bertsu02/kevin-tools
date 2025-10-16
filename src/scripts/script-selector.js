@@ -1,10 +1,14 @@
 import bigWheelImg from "../img/big-wheel.png";
+// import rainWheelImg from "../img/rain-wheel.png";  <-- moved down for clarity
 import rainWheelImg from "../img/rain-wheel.png";
-import bigMarker from "../img/BIG-MARKER.png";
+
+// import bigMarker from "../img/BIG-MARKER.png";
 import rainMarker from "../img/RAIN-MARKER.png";
-import bigButton from "../img/big-button.png";
+
+// import bigButton from "../img/big-button.png";
 import rainButton from "../img/rain-button.png";
-import bigBackground from "../img/bigbg.png";
+
+// import bigBackground from "../img/bigbg.png";
 import rainBackground from "../img/rainbg.png";
 
 (function () {
@@ -12,7 +16,7 @@ import rainBackground from "../img/rainbg.png";
     const startButton = document.querySelector('.button');
     const messageContainer = document.querySelector('.message-container');
 
-    const wheel2Image = document.getElementById("wheel2-img");
+    // const wheel2Image = document.getElementById("wheel2-img");
     const wheel3Image = document.getElementById("wheel3-img");
     const marker = document.querySelector('.marker');
     const button = document.querySelector('.button');
@@ -20,16 +24,16 @@ import rainBackground from "../img/rainbg.png";
     let deg = 0;
 
     const wheelConfigurations = {
-        wheel2: [
-            { name: '25 Coins Tip', startDeg: 0, endDeg: 9 },
-            { name: '10 Coins Tip', startDeg: 9, endDeg: 72 },
-            { name: '10 Coins Tip', startDeg: 72, endDeg: 135 },
-            { name: 'Battle Call', startDeg: 135, endDeg: 180 },
-            { name: '25 Coins Tip', startDeg: 180, endDeg: 189 },
-            { name: '10 Coins Tip', startDeg: 189, endDeg: 252 },
-            { name: '10 Coins Tip', startDeg: 252, endDeg: 315 },
-            { name: 'Battle Call', startDeg: 315, endDeg: 360 },
-        ],
+        // wheel2: [
+        //     { name: '25 Coins Tip', startDeg: 0, endDeg: 9 },
+        //     { name: '10 Coins Tip', startDeg: 9, endDeg: 72 },
+        //     { name: '10 Coins Tip', startDeg: 72, endDeg: 135 },
+        //     { name: 'Battle Call', startDeg: 135, endDeg: 180 },
+        //     { name: '25 Coins Tip', startDeg: 180, endDeg: 189 },
+        //     { name: '10 Coins Tip', startDeg: 189, endDeg: 252 },
+        //     { name: '10 Coins Tip', startDeg: 252, endDeg: 315 },
+        //     { name: 'Battle Call', startDeg: 315, endDeg: 360 },
+        // ],
         wheel3: [
             { name: '25 Coins Tip', startDeg: 0, endDeg: 9 },
             { name: '5 Coins Tip', startDeg: 9, endDeg: 72 },
@@ -40,10 +44,10 @@ import rainBackground from "../img/rainbg.png";
             { name: '10 Coins Tip', startDeg: 252, endDeg: 315 },
             { name: 'Battle Call', startDeg: 315, endDeg: 360 },
         ],
-
     };
 
-    let currentWheel = 'wheel2';
+    // Default to rain wheel
+    let currentWheel = 'wheel3';
 
     function setWheel(wheelId, wheelImage) {
         currentWheel = wheelId;
@@ -54,35 +58,39 @@ import rainBackground from "../img/rainbg.png";
     }
 
     function updateMarker(wheelId) {
-        if (wheelId === 'wheel2') {
-            marker.src = bigMarker;
-        } else if (wheelId === 'wheel3') {
+        // if (wheelId === 'wheel2') {
+        //     marker.src = bigMarker;
+        // } else 
+        if (wheelId === 'wheel3') {
             marker.src = rainMarker;
         }
     }
 
     function updateButton(wheelId) {
-        if (wheelId === 'wheel2') {
-            button.src = bigButton;
-        } else if (wheelId === 'wheel3') {
+        // if (wheelId === 'wheel2') {
+        //     button.src = bigButton;
+        // } else 
+        if (wheelId === 'wheel3') {
             button.src = rainButton;
         } 
     }
+
     function setBackground(wheelId) {
         const body = document.body;
-        if (wheelId === 'wheel2') {
-            body.style.backgroundImage =  `url(${bigBackground})`;
-        } else if (wheelId === 'wheel3') {
+        // if (wheelId === 'wheel2') {
+        //     body.style.backgroundImage =  `url(${bigBackground})`;
+        // } else 
+        if (wheelId === 'wheel3') {
             body.style.backgroundImage = `url(${rainBackground})`;
         }
     }
 
-    wheel2Image.src = bigWheelImg;
+    // wheel2Image.src = bigWheelImg;
     wheel3Image.src = rainWheelImg;
 
-    wheel2Image.addEventListener('click', () => {
-        setWheel('wheel2', bigWheelImg);
-    });
+    // wheel2Image.addEventListener('click', () => {
+    //     setWheel('wheel2', bigWheelImg);
+    // });
 
     wheel3Image.addEventListener('click', () => {
         setWheel('wheel3', rainWheelImg);
@@ -110,7 +118,7 @@ import rainBackground from "../img/rainbg.png";
     });
 
     function determineArea(deg) {
-        const areas = wheelConfigurations[currentWheel]; // Use current wheel's areas
+        const areas = wheelConfigurations[currentWheel];
         for (const area of areas) {
             if (deg >= area.startDeg && deg < area.endDeg) {
                 return area.name;
